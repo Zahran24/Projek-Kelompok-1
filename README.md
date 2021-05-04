@@ -17,15 +17,19 @@ Program yang digunakan untuk mendata barang-barang yang tersedia pada perusahaan
 
 ## Gambar Rancangan Antar Muka
 Main Menu
+
 ![alt](main.jpg)
 
 Sub Menu 1
+
 ![alt](subone.jpg)
 
 Sub Menu 2
+
 ![alt](subtwo.jpg)
 
 After Sub Menu
+
 ![alt](after.jpg)
 
 ## Rencana Pengerjaan Projek
