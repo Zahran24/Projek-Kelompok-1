@@ -1,7 +1,7 @@
 # JUDUL_PROYEK
 
 Anggota Kelompok:
-*  ZHILLAN THAFHAN AHDA (140810200018)
+* ZHILLAN THAFHAN AHDA (140810200018)
 * FIKRI ARKANI SALIM (140810200050)
 * ZAHRAN HANIF FATHANMUBIN (140810200062)
 ---
@@ -23,14 +23,7 @@ dibebaskan sesuai kreatifitas kalian
 
 
 ## Rencana Pengerjaan Projek
-Untuk pengerjaannya kami akan menggunakan berbagai platform sosial media untuk mendiskusikan projek ini. Aplikasi seperti Line, Zoom, Google Meet, dan Discord akan kami gunakan untuk saling berdiskusi. Untuk pengerjaan makalah kami akan menggunakan Google Docs. 
-
-## Gambar Rancangan Antar Muka
-<!--
-Dalam kondisi pandemi seperti ini, tidak memungkinkan untuk bertemu bertatap muka. Maka dari itu
-jelaskan bagaimana kalian bekerja sama, berkoordinasi, pembagian kerja.Tools apa yang kalian gunakan
-untuk bekerja bersama sama cth github, google docs, google meet
-!-->
+Untuk pengerjaannya kami akan menggunakan berbagai platform sosial media untuk mendiskusikan projek ini. Aplikasi seperti Line, Zoom, Google Meet, dan Discord akan kami gunakan untuk saling berdiskusi. Untuk pengerjaan makalah kami akan menggunakan Google Docs. Untuk pengerjaan projeknya kami akan menggunakan VS Code. 
 
 
 ## Lisensi
