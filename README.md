@@ -16,12 +16,17 @@ Mempermudah pendataan barang-barang yang tersedia, dan rusak pada suatu perusaha
 Program yang digunakan untuk mendata barang-barang yang tersedia pada perusahaan menggunakan struktur data linked list. Mendata barang-barang yang rusak pada suatu perusahaan menggunakan struktur data query priority.
 
 ## Gambar Rancangan Antar Muka
-<!--
-Buat rancangan antar muka selengkap mungkin sesuai fungsi aplikasinya. rancangan antar muka
-diusahakan serapih dan seindah mungkin. tools yang digunakan dalam pembuatan rancangan gambar
-dibebaskan sesuai kreatifitas kalian
-!-->
+Main Menu
+![alt](MAIN MENU.jpg)
 
+Sub Menu 1
+![alt](SUB MENU 1.jpg)
+
+Sub Menu 2 
+![alt](SUB MENU 2.jpg)
+
+After Sub Menu
+![alt](AFTER SUB MENU.jpg)
 
 ## Rencana Pengerjaan Projek
 Untuk pengerjaannya kami akan menggunakan berbagai platform sosial media untuk mendiskusikan projek ini. Aplikasi seperti Line, Zoom, Google Meet, dan Discord akan kami gunakan untuk saling berdiskusi. Untuk pengerjaan makalah kami akan menggunakan Google Docs. Untuk pengerjaan projeknya kami akan menggunakan VS Code. 
