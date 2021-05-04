@@ -1,4 +1,5 @@
 # JUDUL_PROYEK
+Rekapan Data Logistik Perusahaan
 
 Anggota Kelompok:
 * ZHILLAN THAFHAN AHDA (140810200018)
