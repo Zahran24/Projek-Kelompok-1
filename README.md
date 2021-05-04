@@ -17,16 +17,16 @@ Program yang digunakan untuk mendata barang-barang yang tersedia pada perusahaan
 
 ## Gambar Rancangan Antar Muka
 Main Menu
-![alt](MAIN MENU.jpg)
+![alt]("MAIN MENU.jpg")
 
 Sub Menu 1
-![alt](SUB MENU 1.jpg)
+![alt]("SUB MENU 1.jpg")
 
 Sub Menu 2 
-![alt](SUB MENU 2.jpg)
+![alt]("SUB MENU 2.jpg")
 
 After Sub Menu
-![alt](AFTER SUB MENU.jpg)
+![alt]("AFTER SUB MENU.jpg")
 
 ## Rencana Pengerjaan Projek
 Untuk pengerjaannya kami akan menggunakan berbagai platform sosial media untuk mendiskusikan projek ini. Aplikasi seperti Line, Zoom, Google Meet, dan Discord akan kami gunakan untuk saling berdiskusi. Untuk pengerjaan makalah kami akan menggunakan Google Docs. Untuk pengerjaan projeknya kami akan menggunakan VS Code. 
