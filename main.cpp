@@ -1,6 +1,6 @@
 #include <iostream>
 #include <iomanip>
-//maintes
+//main
 struct data1 {
     std::string namaBarang;
     std::string jumlahBarang;
