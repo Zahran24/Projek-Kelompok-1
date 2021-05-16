@@ -23,13 +23,91 @@ struct data2{
         this -> next = nullptr;
         this -> prev = nullptr;
     }
-}
+};
+
+struct data3{
+    std::string kritik;
+    std::string saran;
+
+    data3 *next;
+    data3 *prev;
+    data3(std::string kritik, std::string saran){
+        this -> kritik = kritik;
+        this -> saran = saran;
+        this -> next = nullptr;
+        this -> prev = nullptr;
+    }
+};
 
 using data1ptr = data1*;
 using data2ptr = data2*;
+using data3ptr = data3*;
 using linkedlist = data1ptr;
 
 data2ptr headbarangRusak = nullptr;
+data3ptr headkritikSaran = nullptr;
+
+void addData3(){
+    std::string kritik, saran;
+    std::cout << "========================" << "\n";
+    std::cout << "    Kritik dan Saran    " << "\n";
+    std::cout << "========================" << "\n";
+    std::cout << "Kritik : ";
+    std::getline(std::cin, kritik);
+    std::cout << "Saran ";
+    std::getline(std::cin, saran);
+    data3ptr baru = new data3(kritik, saran);
+    if (headkritikSaran == nullptr){
+        headkritikSaran = baru;
+    }else{
+       baru -> next = headkritikSaran;
+       headkritikSaran -> prev = baru;
+       headkritikSaran = baru;
+    }
+}
+
+void lihatkritikSaran(){
+    data3ptr temp = headkritikSaran;
+    std::cout << "============================================================" << "\n";
+    std::cout << "Krtik dan Saran" << "\n";
+    std::cout << "============================================================" << "\n";
+    while(temp != nullptr){
+        std::string command;
+        std::cout << "Kritik : " << temp -> kritik << "\n";
+        std::cout << "Saran : " << temp -> saran << "\n";
+        std::cout << "============================================================" << "\n";
+        std::getline(std::cin, command);
+        std::cout << "============================================================" << "\n";
+        if(command == "next"){
+            temp = temp -> next;
+        }else{
+            break;
+        }
+    }
+}
+
+void data3(){
+    int input_data3;
+    std::cout << std::setfill('=') << std::setw(31) << "\n";
+    std::cout << std::setw(4) << "Kritik dan Saran \n";
+    std::cout << std::setfill('=') << std::setw(31) << "\n";
+    std::cout << "1. Input Kritik dan Saran\n";
+    std::cout << "2. Lihat Kritik dan Saran\n";
+    (std::cin >> input_data3).get();
+    switch (input_data3)
+    {
+    case 1 :
+        addData3();
+        break;
+    case 2 :
+        lihatkritikSaran();
+        break;    
+    
+    default :
+        break;
+    }
+
+}
 
 void newList(linkedlist& headName, linkedlist& headSum, linkedlist& headCode){
     headName = nullptr;
@@ -96,8 +174,8 @@ void main_template(){
     std::cout << "\nRekapan Data\n";
     std::cout << "===========================================================\n";
     std::cout << "1.Data Barang yang Tersedia\n";
-    std::cout << "2.Data\n";
-    std::cout << "3.Data\n";
+    std::cout << "2.Data Barang yang Rusak\n";
+    std::cout << "3.Kritik dan Saran";
     std::cout << "4.Keluar\n";
 }
 
@@ -161,7 +239,7 @@ void delData2(){
     (std::cin >> jumlah).get();
     data2ptr temp = headbarangRusak;
     while(temp != nullptr){
-        if(temp -> kodeBarang = kode){
+        if(temp -> kodeBarang == kode){
             break;
         }
         temp = temp -> next;
