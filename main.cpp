@@ -9,8 +9,27 @@ struct data1 {
     data1 *next;
 };
 
+struct data2{
+    std::string namaBarang;
+    int jumlahBarang;
+    std::string kodeBarang;
+
+    data2 *next;
+    data2 *prev;
+    data2(std::string namaBarang, int jumlahBarang, std::string kodeBarang){
+        this -> namaBarang = namaBarang;
+        this -> jumlahBarang = jumlahBarang;
+        this -> kodeBarang = kodeBarang;
+        this -> next = nullptr;
+        this -> prev = nullptr;
+    }
+}
+
 using data1ptr = data1*;
-using linkedlist = data1ptr; 
+using data2ptr = data2*;
+using linkedlist = data1ptr;
+
+data2ptr headbarangRusak = nullptr;
 
 void newList(linkedlist& headName, linkedlist& headSum, linkedlist& headCode){
     headName = nullptr;
@@ -105,21 +124,93 @@ void data_1(){
     }
 }
 
+void addData2(){
+    std::string kode, namaBarang;
+    int jumlah;
+    std::cout << "========================" << "\n";
+    std::cout << "Tambah Data Barang Rusak" << "\n";
+    std::cout << "========================" << "\n";
+    std::cout << "Kode Barang : ";
+    std::getline(std::cin, kode);
+    std::cout << "Nama Barang : ";
+    std::getline(std::cin, namaBarang);
+    std::cout << "Jumlah Barang : ";
+    (std::cin >> jumlah).get();
+    data2ptr baru = new data2(namaBarang, jumlah, kode);
+    if (headbarangRusak == nullptr){
+        headbarangRusak = baru;
+    }else{
+        data2ptr temp = headbarangRusak;
+        while(temp -> next != nullptr){
+            temp = temp -> next;
+        }
+        temp -> next = baru;
+        baru -> prev = temp;
+    }
+}
+
+void delData2(){
+    std::string kode;
+    int jumlah;
+    std::cout << "========================" << "\n";
+    std::cout << "Hapus Data Barang Rusak" << "\n";
+    std::cout << "========================" << "\n";
+    std::cout << "Kode Barang : ";
+    std::getline(std::cin, kode);
+    std::cout << "Jumlah Barang : ";
+    (std::cin >> jumlah).get();
+    data2ptr temp = headbarangRusak;
+    while(temp != nullptr){
+        if(temp -> kodeBarang = kode){
+            break;
+        }
+        temp = temp -> next;
+    }
+    if(temp != nullptr){
+        temp -> jumlahBarang -= jumlah;
+        if(temp -> jumlahBarang <= 0){
+            temp -> prev -> next = temp -> next;
+            temp -> next -> prev = temp -> prev;
+            temp -> next = nullptr;
+            temp -> prev = nullptr;
+            delete temp; 
+        }
+    }
+}
+
+void trasversalData2(){
+    std::cout << "============================================================" << "\n";
+    std::cout << "Kode Barang\tNama Barang\tKuantitas" << "\n";
+    std::cout << "============================================================" << "\n";
+    data2ptr temp = headbarangRusak;
+    while(temp != nullptr){
+        std::cout << temp -> kodeBarang << "\t" << temp -> namaBarang << "\t" << temp -> jumlahBarang << '\n';
+        temp = temp -> next;
+    }
+}
+
 void data_2(){
-    char input_data2;
+    int input_data2;
     std::cout << std::setfill('=') << std::setw(31) << "\n";
     std::cout << std::setw(4) << "Rekapan Data 2\n";
     std::cout << std::setfill('=') << std::setw(31) << "\n";
     std::cout << "1.Masukkan Data\n";
     std::cout << "2.Hapus Data\n";
     std::cout << "3.Tampilkan Data\n";
-    std::cin >> input_data2;
+    (std::cin >> input_data2).get();
     switch (input_data2)
     {
-    case '1' :
+    case 1 :
+        addData2();
         break;
+    case 2 :
+        delData2();
+        break;
+    case 3 :
+        trasversalData2();
+        break;    
     
-    default:
+    default :
         break;
     }
 
@@ -128,7 +219,7 @@ void data_2(){
 void dat_akhir(){
 
 }
-main() {
+int main() {
     char input;
     linkedlist headName, headSum, headCode;
     data1ptr ptrName, ptrSum, ptrCode;
