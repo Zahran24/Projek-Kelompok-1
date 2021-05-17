@@ -94,9 +94,9 @@ void lihatkritikSaran(){
 
 void data_3(){
     int input_data3;
-    std::cout << std::setfill('=') << std::setw(31) << "\n";
+    std::cout << "=========================================" << "\n";
     std::cout << std::setw(4) << "Kritik dan Saran \n";
-    std::cout << std::setfill('=') << std::setw(31) << "\n";
+    std::cout << "=========================================" << "\n";
     std::cout << "1. Input Kritik dan Saran\n";
     std::cout << "2. Lihat Kritik dan Saran\n";
     std::cout << "Masukan Input : ";
@@ -310,21 +310,21 @@ void delData2(){
 }
 
 void trasversalData2(){
-    std::cout << "============================================================" << "\n";
-    std::cout << "Kode Barang\tNama Barang\tKuantitas" << "\n";
-    std::cout << "============================================================" << "\n";
+    std::cout << "========================================================================" << "\n";
+    std::cout << std::setw(30) << std::left << "Kode Barang" << std::setw(30) << std::left <<"Nama Barang"<< std::setw(30) << std::left <<"Kuantitas" << "\n";
+    std::cout << "========================================================================" << "\n";
     data2ptr temp = headbarangRusak;
     while(temp != nullptr){
-        std::cout << temp -> kodeBarang << "\t" << temp -> namaBarang << "\t" << temp -> jumlahBarang << '\n';
+        std::cout << std::setw(30) << std::left << temp -> kodeBarang << std::setw(30) << std::left << temp -> namaBarang << std::setw(30) << std::left << temp -> jumlahBarang << '\n';
         temp = temp -> next;
     }
 }
 
 void data_2(){
     int input_data2;
-    std::cout << std::setfill('=') << std::setw(31) << "\n";
+    std::cout << "=========================================" << "\n";
     std::cout << std::setw(4) << "Rekapan Data 2\n";
-    std::cout << std::setfill('=') << std::setw(31) << "\n";
+    std::cout << "=========================================" << "\n";
     std::cout << "1.Masukkan Data\n";
     std::cout << "2.Hapus Data\n";
     std::cout << "3.Tampilkan Data\n";
