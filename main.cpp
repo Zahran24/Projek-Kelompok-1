@@ -53,69 +53,6 @@ data1ptr headBrngTrsedia = nullptr;
 data2ptr headbarangRusak = nullptr;
 data3ptr headkritikSaran = nullptr;
 
-void addData3(){
-    std::string kritik, saran;
-    std::cout << "========================" << "\n";
-    std::cout << "    Kritik dan Saran    " << "\n";
-    std::cout << "========================" << "\n";
-    std::cout << "Kritik : ";
-    std::getline(std::cin, kritik);
-    std::cout << "Saran ";
-    std::getline(std::cin, saran);
-    data3ptr baru = new data3(kritik, saran);
-    if (headkritikSaran == nullptr){
-        headkritikSaran = baru;
-    }else{
-       baru -> next = headkritikSaran;
-       headkritikSaran -> prev = baru;
-       headkritikSaran = baru;
-    }
-}
-
-void lihatkritikSaran(){
-    data3ptr temp = headkritikSaran;
-    std::cout << "============================================================" << "\n";
-    std::cout << "Krtik dan Saran" << "\n";
-    std::cout << "============================================================" << "\n";
-    while(temp != nullptr){
-        std::string command;
-        std::cout << "Kritik : " << temp -> kritik << "\n";
-        std::cout << "Saran : " << temp -> saran << "\n";
-        std::cout << "============================================================" << "\n";
-        std::getline(std::cin, command);
-        std::cout << "============================================================" << "\n";
-        if(command == "next"){
-            temp = temp -> next;
-        }else{
-            break;
-        }
-    }
-}
-
-void data_3(){
-    int input_data3;
-    std::cout << std::setfill('=') << std::setw(31) << "\n";
-    std::cout << std::setw(4) << "Kritik dan Saran \n";
-    std::cout << std::setfill('=') << std::setw(31) << "\n";
-    std::cout << "1. Input Kritik dan Saran\n";
-    std::cout << "2. Lihat Kritik dan Saran\n";
-    std::cout << "Masukan Input : ";
-    (std::cin >> input_data3).get();
-    switch (input_data3)
-    {
-    case 1 :
-        addData3();
-        break;
-    case 2 :
-        lihatkritikSaran();
-        break;    
-    
-    default :
-        break;
-    }
-
-}
-
 /*
 void newList(linkedlist& headName, linkedlist& headSum, linkedlist& headCode){
     headName = nullptr;
@@ -310,12 +247,12 @@ void delData2(){
 }
 
 void trasversalData2(){
-    std::cout << "============================================================" << "\n";
-    std::cout << "Kode Barang\tNama Barang\tKuantitas" << "\n";
-    std::cout << "============================================================" << "\n";
+    std::cout << "========================================================================" << "\n";
+    std::cout << std::setw(30) << std::left << "Kode Barang" << std::setw(30) << std::left <<"Nama Barang"<< std::setw(30) << std::left <<"Kuantitas" << "\n";
+    std::cout << "========================================================================" << "\n";
     data2ptr temp = headbarangRusak;
     while(temp != nullptr){
-        std::cout << temp -> kodeBarang << "\t" << temp -> namaBarang << "\t" << temp -> jumlahBarang << '\n';
+        std::cout << std::setw(30) << std::left << temp -> kodeBarang << std::setw(30) << std::left << temp -> namaBarang << std::setw(30) << std::left << temp -> jumlahBarang << '\n';
         temp = temp -> next;
     }
 }
@@ -348,6 +285,68 @@ void data_2(){
 
 }
 
+void addData3(){
+    std::string kritik, saran;
+    std::cout << "========================" << "\n";
+    std::cout << "    Kritik dan Saran    " << "\n";
+    std::cout << "========================" << "\n";
+    std::cout << "Kritik : ";
+    std::getline(std::cin, kritik);
+    std::cout << "Saran ";
+    std::getline(std::cin, saran);
+    data3ptr baru = new data3(kritik, saran);
+    if (headkritikSaran == nullptr){
+        headkritikSaran = baru;
+    }else{
+       baru -> next = headkritikSaran;
+       headkritikSaran -> prev = baru;
+       headkritikSaran = baru;
+    }
+}
+
+void lihatkritikSaran(){
+    data3ptr temp = headkritikSaran;
+    std::cout << "============================================================" << "\n";
+    std::cout << "Krtik dan Saran" << "\n";
+    std::cout << "============================================================" << "\n";
+    while(temp != nullptr){
+        std::string command;
+        std::cout << "Kritik : " << temp -> kritik << "\n";
+        std::cout << "Saran : " << temp -> saran << "\n";
+        std::cout << "============================================================" << "\n";
+        std::getline(std::cin, command);
+        std::cout << "============================================================" << "\n";
+        if(command == "next"){
+            temp = temp -> next;
+        }else{
+            break;
+        }
+    }
+}
+
+void data_3(){
+    int input_data3;
+    std::cout << std::setfill('=') << std::setw(31) << "\n";
+    std::cout << std::setw(4) << "Kritik dan Saran \n";
+    std::cout << std::setfill('=') << std::setw(31) << "\n";
+    std::cout << "1. Input Kritik dan Saran\n";
+    std::cout << "2. Lihat Kritik dan Saran\n";
+    std::cout << "Masukan Input : ";
+    (std::cin >> input_data3).get();
+    switch (input_data3)
+    {
+    case 1 :
+        addData3();
+        break;
+    case 2 :
+        lihatkritikSaran();
+        break;    
+    
+    default :
+        break;
+    }
+
+}
 
 int main() {
     char input;
