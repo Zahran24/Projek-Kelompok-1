@@ -1,6 +1,6 @@
 #include <iostream>
 #include <iomanip>
-//tes
+
 struct data1 {
     std::string namaBarang;
     std::string jumlahBarang;
@@ -169,7 +169,7 @@ void coutdata (data1ptr& headName, data1ptr& headSum, data1ptr& headCode){
     std::cout << std::endl;
 }
 
-void main_template(){
+void main_menu(){
     std::cout << "===========================================================";
     std::cout << "\nRekapan Data\n";
     std::cout << "===========================================================\n";
@@ -294,9 +294,7 @@ void data_2(){
 
 }
 
-void dat_akhir(){
 
-}
 int main() {
     char input;
     linkedlist headName, headSum, headCode;
@@ -304,7 +302,7 @@ int main() {
     newList(headName, headSum, headCode);
     do
     {
-        main_template();
+        main_menu();
         std::cin >> input;
         switch (input) {
             case '1' :
@@ -321,7 +319,6 @@ int main() {
             default:
                 break;
         }
-        getchar();
     } while (input!='4');
     
     
