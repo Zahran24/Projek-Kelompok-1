@@ -92,13 +92,14 @@ void lihatkritikSaran(){
     }
 }
 
-void data3(){
+void data_3(){
     int input_data3;
     std::cout << std::setfill('=') << std::setw(31) << "\n";
     std::cout << std::setw(4) << "Kritik dan Saran \n";
     std::cout << std::setfill('=') << std::setw(31) << "\n";
     std::cout << "1. Input Kritik dan Saran\n";
     std::cout << "2. Lihat Kritik dan Saran\n";
+    std::cout << "Masukan Input : ";
     (std::cin >> input_data3).get();
     switch (input_data3)
     {
@@ -206,8 +207,9 @@ void main_menu(){
     std::cout << "===========================================================\n";
     std::cout << "1.Data Barang yang Tersedia\n";
     std::cout << "2.Data Barang yang Rusak\n";
-    std::cout << "3.Kritik dan Saran";
+    std::cout << "3.Kritik dan Saran\n";
     std::cout << "4.Keluar\n";
+    std::cout << "Masukan Pilihan Menu :";
 }
 
 void menu_data1 (){
@@ -326,6 +328,7 @@ void data_2(){
     std::cout << "1.Masukkan Data\n";
     std::cout << "2.Hapus Data\n";
     std::cout << "3.Tampilkan Data\n";
+    std::cout << "Masukan Input : ";
     (std::cin >> input_data2).get();
     switch (input_data2)
     {
@@ -360,6 +363,7 @@ int main() {
                 data_2();
                 break;
             case '3' :
+                data_3();
                 break;
             case '4' :
                 std::cout << "Program Selesai";
