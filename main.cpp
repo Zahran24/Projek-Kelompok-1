@@ -7,6 +7,12 @@ struct data1 {
     std::string kodeBarang;
 
     data1 *next;
+    data1(std::string namaBarang, std::string jumlahBarang, std::string kodeBarang){
+        this -> namaBarang = namaBarang;
+        this -> jumlahBarang = jumlahBarang;
+        this -> kodeBarang = kodeBarang;
+        this -> next = nullptr;
+    }
 };
 
 struct data2{
@@ -42,8 +48,8 @@ struct data3{
 using data1ptr = data1*;
 using data2ptr = data2*;
 using data3ptr = data3*;
-using linkedlist = data1ptr;
-
+//using linkedlist = data1ptr;
+data1ptr headBrngTrsedia = nullptr;
 data2ptr headbarangRusak = nullptr;
 data3ptr headkritikSaran = nullptr;
 
@@ -109,30 +115,31 @@ void data3(){
 
 }
 
+/*
 void newList(linkedlist& headName, linkedlist& headSum, linkedlist& headCode){
     headName = nullptr;
     headSum = nullptr;
     headCode = nullptr;
 }
 
-data1ptr createElement (data1ptr& headName, data1ptr& headSum, data1ptr& headCode){
+void createElement (data1ptr& nodesName, data1ptr& nodesSum, data1ptr& nodesCode){
     std::string name, sum, code;
     std::cout << "Masukkan Nama Barang : ";
     std::cin >> name;
-    headName = new data1;
-    headName->namaBarang = name;
+    nodesName = new data1;
+    nodesName->namaBarang = name;
     std::cout << "Masukkan Jumlah Barang : ";
     std::cin >> sum;
-    headSum = new data1;
-    headSum->jumlahBarang = sum;
+    nodesSum = new data1;
+    nodesSum->jumlahBarang = sum;
     std::cout << "Masukkan Kode Barang : ";
     std::cin >> code;
-    headCode = new data1;
-    headCode->kodeBarang = code;
-    return headName, headSum, headCode;
+    nodesCode = new data1;
+    nodesCode->kodeBarang = code;
 }
 
-void insertFirst(data1ptr& headName, data1ptr& headSum, data1ptr& headCode, data1ptr nodesName, data1ptr nodesSum, data1ptr nodesCode) {
+void insertFirst(data1ptr& headName, data1ptr& headSum, data1ptr& headCode, 
+                 data1ptr nodesName, data1ptr nodesSum, data1ptr nodesCode) {
     if(headName ==  nullptr) {
         headName = nodesName;
     } else {
@@ -151,22 +158,46 @@ void insertFirst(data1ptr& headName, data1ptr& headSum, data1ptr& headCode, data
         nodesCode->next=headCode;
         headCode = nodesCode;
     }
+}*/
+
+void addData1_first(){
+    std::string name, sum, code;
+    std::cout << "=============================" << "\n";
+    std::cout << " Tambah Data Barang Tersedia" << "\n";
+    std::cout << "=============================" << "\n";
+    std::cout << "Nama Barang   : ";
+    std::getline(std::cin, name);
+    std::cout << "Jumlah Barang : ";
+    std::getline(std::cin, sum);
+    std::cout << "Kode Barang   : ";
+    std::getline(std::cin, code);
+    data1ptr input = new data1(name, sum, code);
+    if (headBrngTrsedia == nullptr){
+        headBrngTrsedia = input;
+    } else{
+        input -> next = headBrngTrsedia;
+        headBrngTrsedia = input;
+    }
 }
 
 void headerdata1(){
-    std::cout << std::setw(69) << std::right << "Rekapan Barang yang Tersedia" << std::endl
-              << "=========================================================================================================================\n"
-              << std::setw(30) << std::left << "Nama Barang"
-              << std::setw(30) << std::left << "Jumlah Barang"
-              << std::setw(30) << std::left << "Kode Barang"
-              << std::endl
-              << "=========================================================================================================================\n";  
+    std::cout << "                          Rekapan Barang yang Tersedia\n" ;
+    std::cout << "=========================================================================================="<< "\n";
+    std::cout << std::setw(30) << std::left << "Nama Barang";
+    std::cout << std::setw(30) << std::left << "Jumlah Barang";
+    std::cout << std::setw(30) << std::left << "Kode Barang" <<"\n";
+    std::cout << "=========================================================================================="<<"\n";
 }
-void coutdata (data1ptr& headName, data1ptr& headSum, data1ptr& headCode){
-    std::cout << std::setw(30) << std::left << headName->namaBarang
-              << std::setw(30) << std::left << headSum->jumlahBarang
-              << std::setw(30) << std::left << headCode->kodeBarang;
-    std::cout << std::endl;
+
+void coutdata1 (){
+    data1ptr tempTraversal = headBrngTrsedia;
+    while (tempTraversal != nullptr)
+    {
+        std::cout << std::setw(30) << std::left << tempTraversal->namaBarang;
+        std::cout << std::setw(30) << std::left << tempTraversal->jumlahBarang;
+        std::cout << std::setw(30) << std::left << tempTraversal->kodeBarang << "\n";
+        tempTraversal->next;
+    }
 }
 
 void main_menu(){
@@ -179,27 +210,47 @@ void main_menu(){
     std::cout << "4.Keluar\n";
 }
 
+void menu_data1 (){
+    std::cout << "\n======================================"<< "\n" 
+              << "  Rekapan Data Barang yang Tersedia\n"
+              << "======================================" << "\n"
+              << "1.Masukkan Data \n"
+              << "2.Hapus Data\n"
+              << "3.Tampilkan Data\n"
+              << "4.Kembali ke Menu Utama\n"
+              << "Masukkan Input : "; ;
+}
+void deleteFirst_data1 (){
+    data1ptr delFirst;
+    if (headBrngTrsedia == nullptr){
+        delFirst = nullptr;
+    } else {
+        delFirst = headBrngTrsedia;
+        headBrngTrsedia = headBrngTrsedia->next;
+        delFirst->next = nullptr;
+    }
+    delete delFirst;
+}
 void data_1(){
     char input_data1;
-    linkedlist headName, headSum, headCode;
     data1ptr ptrName, ptrSum, ptrCode;
-    std::cout << "========================"<< "\n";
-    std::cout << "Rekapan Data 1\n";
-    std::cout << "========================" << "\n";
-    std::cout << "1.Masukkan Data\n";
-    std::cout << "2.Hapus Data\n";
-    std::cout << "3.Tampilkan Data\n";
-    std::cout << "Masukkan Input : "; std::cin >> input_data1;
-    if (input_data1 == '1')
-    {
-        createElement(ptrName, ptrSum, ptrCode);
-        insertFirst(headName, headSum, headCode, ptrName, ptrSum, ptrCode);
-    }
-    if (input_data1 == '3')
-    {
-        headerdata1();
-        coutdata(ptrName, ptrSum, ptrCode);
-    }
+    menu_data1();
+    std::cin >> input_data1;
+        switch (input_data1)
+        {
+        case '1' :
+            addData1_first();
+            break;
+        case '2' :
+            deleteFirst_data1();
+            break;
+        case '3' :
+            headerdata1();
+            coutdata1();
+            break;
+        default:
+            break;
+        } 
 }
 
 void addData2(){
@@ -297,9 +348,6 @@ void data_2(){
 
 int main() {
     char input;
-    linkedlist headName, headSum, headCode;
-    data1ptr ptrName, ptrSum, ptrCode;
-    newList(headName, headSum, headCode);
     do
     {
         main_menu();
@@ -320,7 +368,4 @@ int main() {
                 break;
         }
     } while (input!='4');
-    
-    
-
 }
