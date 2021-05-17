@@ -259,9 +259,9 @@ void trasversalData2(){
 
 void data_2(){
     int input_data2;
-    std::cout << std::setfill('=') << std::setw(31) << "\n";
+    std::cout << "=========================================" << "\n";
     std::cout << std::setw(4) << "Rekapan Data 2\n";
-    std::cout << std::setfill('=') << std::setw(31) << "\n";
+    std::cout << "=========================================" << "\n";
     std::cout << "1.Masukkan Data\n";
     std::cout << "2.Hapus Data\n";
     std::cout << "3.Tampilkan Data\n";
@@ -326,9 +326,9 @@ void lihatkritikSaran(){
 
 void data_3(){
     int input_data3;
-    std::cout << std::setfill('=') << std::setw(31) << "\n";
+    std::cout << "=========================================" << "\n";
     std::cout << std::setw(4) << "Kritik dan Saran \n";
-    std::cout << std::setfill('=') << std::setw(31) << "\n";
+    std::cout << "=========================================" << "\n";
     std::cout << "1. Input Kritik dan Saran\n";
     std::cout << "2. Lihat Kritik dan Saran\n";
     std::cout << "Masukan Input : ";
