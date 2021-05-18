@@ -130,7 +130,7 @@ void data_1(){
     char input_data1;
     data1ptr ptrName, ptrSum, ptrCode;
     menu_data1();
-    std::cin >> input_data1;
+    (std::cin >> input_data1).get();
         switch (input_data1)
         {
         case '1' :
