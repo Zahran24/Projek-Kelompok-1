@@ -45,14 +45,89 @@ struct data3{
     }
 };
 
+struct data4{
+    std::string kodeBarang;
+    std::string namaBarang;
+    int jumlah;
+    int prioritas;
+    data4 *next;
+    data4(std::string kodeBarang, std::string namaBarang, int jumlah, int prioritas){
+        this -> kodeBarang = kodeBarang;
+        this -> namaBarang = namaBarang;
+        this -> jumlah = jumlah;
+        this -> prioritas = prioritas;
+    }
+};
+
 using data1ptr = data1*;
 using data2ptr = data2*;
 using data3ptr = data3*;
+using data4ptr = data4*;
 
 data1ptr headBrngTrsedia = nullptr;
 data2ptr headbarangRusak = nullptr;
 data3ptr headkritikSaran = nullptr;
+data4ptr headantrian = nullptr;
 
+void addantrianBarang(){
+    std::string name, code;
+    int sum, prioritas;
+    std::cout << "=============================" << "\n";
+    std::cout << " Tambah Pengiriman Barang" << "\n";
+    std::cout << "=============================" << "\n";
+    std::cout << "Nama Barang   : ";
+    std::getline(std::cin, name);
+    std::cout << "Jumlah Barang : ";
+    (std::cin >> sum).get();
+    std::cout << "Kode Barang   : ";
+    std::getline(std::cin, code);
+    std::cout << "Prioritas : ";
+    (std::cin >> prioritas).get();
+    data4ptr input = new data4(code, name, sum, prioritas);
+    if (headantrian == nullptr){
+        headantrian = input;
+    } else{
+        data4ptr temp = headantrian;
+        data4ptr temp2 = nullptr;
+        while (temp -> prioritas >= prioritas){
+            if(temp -> next == nullptr){
+                break;
+            }
+            temp2 = temp;
+            temp = temp -> next;
+        }
+        if(temp == headantrian && input -> prioritas > temp -> prioritas){
+            input -> next = temp;
+            headantrian = input;
+        }else if(temp -> next == nullptr && input -> prioritas < temp -> prioritas){
+            temp -> next = input;
+        }else{
+            temp2 -> next = input;
+            input -> next = temp;
+        }
+    }
+}
+
+void headerantrian1(){
+    std::cout << "                                   Antrian Barang\n" ;
+    std::cout << "=========================================================================================="<< "\n";
+    std::cout << std::setw(30) << std::left << "Nama Barang";
+    std::cout << std::setw(30) << std::left << "Jumlah Barang";
+    std::cout << std::setw(30) << std::left << "Kode Barang" <<"\n";
+    std::cout << "=========================================================================================="<<"\n";
+}
+
+void coutantrian (){
+    headerantrian1();
+    data4ptr tempTraversal = headantrian;
+    while (tempTraversal != nullptr)
+    {
+        std::cout << std::setw(30) << std::left << tempTraversal->namaBarang;
+        std::cout << std::setw(30) << std::left << tempTraversal->jumlah;
+        std::cout << std::setw(30) << std::left << tempTraversal->kodeBarang << "\n";
+        tempTraversal = tempTraversal -> next;
+    }
+}
 
 void addData1(){
     std::string name, sum, code;
@@ -340,9 +415,11 @@ int main() {
         std::cout << "1.Data Barang yang Tersedia\n";
         std::cout << "2.Data Barang yang Rusak\n";
         std::cout << "3.Kritik dan Saran\n";
-        std::cout << "4.Keluar\n";
+        std::cout << "4.Tambah Antrian Barang\n";
+        std::cout << "5.Tampilkan Antrian Barang\n";
+        std::cout << "6.Keluar\n";
         std::cout << "Masukan Pilihan Menu :";
-        std::cin >> input;
+        (std::cin >> input).get();
         switch (input) {
             case '1' :
                 data_1();
@@ -354,10 +431,16 @@ int main() {
                 data_3();
                 break;
             case '4' :
+                addantrianBarang();
+                break;
+            case '5' :
+                coutantrian();
+                break;
+            case '6' :
                 std::cout << "Program Selesai";
                 break;
-            default:
+            default :
                 break;
         }
-    } while (input!='4');
+    } while (input!='6');
 }
