@@ -126,8 +126,8 @@ void deleteLast_data1(){
 }
 
 void deleteList_data1(){
-    if(headBrngTrsedia == nullptr)
-        return;
+    if(headBrngTrsedia == nullptr){
+        return;}
     data1ptr delNode_data1 = headBrngTrsedia;
     data1ptr next_delNode = nullptr;
     while (delNode_data1!=nullptr){
