@@ -48,55 +48,11 @@ struct data3{
 using data1ptr = data1*;
 using data2ptr = data2*;
 using data3ptr = data3*;
-//using linkedlist = data1ptr;
+
 data1ptr headBrngTrsedia = nullptr;
 data2ptr headbarangRusak = nullptr;
 data3ptr headkritikSaran = nullptr;
 
-/*
-void newList(linkedlist& headName, linkedlist& headSum, linkedlist& headCode){
-    headName = nullptr;
-    headSum = nullptr;
-    headCode = nullptr;
-}
-
-void createElement (data1ptr& nodesName, data1ptr& nodesSum, data1ptr& nodesCode){
-    std::string name, sum, code;
-    std::cout << "Masukkan Nama Barang : ";
-    std::cin >> name;
-    nodesName = new data1;
-    nodesName->namaBarang = name;
-    std::cout << "Masukkan Jumlah Barang : ";
-    std::cin >> sum;
-    nodesSum = new data1;
-    nodesSum->jumlahBarang = sum;
-    std::cout << "Masukkan Kode Barang : ";
-    std::cin >> code;
-    nodesCode = new data1;
-    nodesCode->kodeBarang = code;
-}
-
-void insertFirst(data1ptr& headName, data1ptr& headSum, data1ptr& headCode, 
-                 data1ptr nodesName, data1ptr nodesSum, data1ptr nodesCode) {
-    if(headName ==  nullptr) {
-        headName = nodesName;
-    } else {
-        nodesName->next=headName;
-        headName = nodesName;
-    }
-    if(headSum ==  nullptr) {
-        headSum = nodesSum;
-    } else {
-        nodesSum->next=headSum;
-        headSum = nodesSum;
-    }
-    if(headCode ==  nullptr) {
-        headCode = nodesCode;
-    } else {
-        nodesCode->next=headCode;
-        headCode = nodesCode;
-    }
-}*/
 
 void addData1_first(){
     std::string name, sum, code;
