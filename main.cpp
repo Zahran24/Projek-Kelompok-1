@@ -90,7 +90,7 @@ void coutdata1 (){
         std::cout << std::setw(30) << std::left << tempTraversal->namaBarang;
         std::cout << std::setw(30) << std::left << tempTraversal->jumlahBarang;
         std::cout << std::setw(30) << std::left << tempTraversal->kodeBarang << "\n";
-        tempTraversal->next;
+        tempTraversal = tempTraversal -> next;
     }
 }
 
