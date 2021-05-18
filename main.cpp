@@ -54,7 +54,7 @@ data2ptr headbarangRusak = nullptr;
 data3ptr headkritikSaran = nullptr;
 
 
-void addData1_first(){
+void addData1(){
     std::string name, sum, code;
     std::cout << "=============================" << "\n";
     std::cout << " Tambah Data Barang Tersedia" << "\n";
@@ -105,16 +105,7 @@ void main_menu(){
     std::cout << "Masukan Pilihan Menu :";
 }
 
-void menu_data1 (){
-    std::cout << "\n======================================"<< "\n" 
-              << "  Rekapan Data Barang yang Tersedia\n"
-              << "======================================" << "\n"
-              << "1.Masukkan Data \n"
-              << "2.Hapus Data\n"
-              << "3.Tampilkan Data\n"
-              << "4.Kembali ke Menu Utama\n"
-              << "Masukkan Input : "; ;
-}
+
 void deleteFirst_data1 (){
     data1ptr delFirst;
     if (headBrngTrsedia == nullptr){
@@ -126,20 +117,66 @@ void deleteFirst_data1 (){
     }
     delete delFirst;
 }
+
+void deleteLast_data1(){
+    if(headBrngTrsedia==nullptr){
+        return;
+    } else if( headBrngTrsedia->next == nullptr){
+        delete headBrngTrsedia;
+        headBrngTrsedia = nullptr;
+    } else {
+        data1ptr prelast = headBrngTrsedia;
+        data1ptr last = prelast->next;
+        while (last->next != nullptr)
+        {
+            prelast = last;
+            last = last->next;
+        }
+        prelast->next = nullptr;
+        delete last;
+    }
+}
+
+void deleteList_data1(){
+    if(headBrngTrsedia == nullptr)
+        return;
+    data1ptr delNode_data1 = headBrngTrsedia;
+    data1ptr next_delNode = nullptr;
+    while (delNode_data1!=nullptr){
+        next_delNode = delNode_data1->next;
+        delete delNode_data1;
+        delNode_data1 = next_delNode;
+    }
+    headBrngTrsedia = nullptr;
+}
+
 void data_1(){
     char input_data1;
-    data1ptr ptrName, ptrSum, ptrCode;
-    menu_data1();
+    std::cout << "\n======================================"<< "\n" 
+              << "  Rekapan Data Barang yang Tersedia\n"
+              << "======================================" << "\n"
+              << "1.Masukkan Data \n"
+              << "2.Hapus Data di awal\n"
+              << "3.Hapus Data di akhir\n"
+              << "4.Hapus Seluruh data\n"
+              << "5.Tampilkan Data\n"
+              << "Masukkan Input : " ;
     std::cin >> input_data1;
         switch (input_data1)
         {
         case '1' :
-            addData1_first();
+            addData1();
             break;
         case '2' :
             deleteFirst_data1();
             break;
         case '3' :
+            deleteLast_data1();
+            break;
+        case '4' :
+            deleteList_data1();
+            break;
+        case '5' :
             headerdata1();
             coutdata1();
             break;
