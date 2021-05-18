@@ -94,18 +94,6 @@ void coutdata1 (){
     }
 }
 
-void main_menu(){
-    std::cout << "===========================================================";
-    std::cout << "\nRekapan Data\n";
-    std::cout << "===========================================================\n";
-    std::cout << "1.Data Barang yang Tersedia\n";
-    std::cout << "2.Data Barang yang Rusak\n";
-    std::cout << "3.Kritik dan Saran\n";
-    std::cout << "4.Keluar\n";
-    std::cout << "Masukan Pilihan Menu :";
-}
-
-
 void deleteFirst_data1 (){
     data1ptr delFirst;
     if (headBrngTrsedia == nullptr){
@@ -152,15 +140,15 @@ void deleteList_data1(){
 
 void data_1(){
     char input_data1;
-    std::cout << "\n======================================"<< "\n" 
-              << "  Rekapan Data Barang yang Tersedia\n"
-              << "======================================" << "\n"
-              << "1.Masukkan Data \n"
-              << "2.Hapus Data di awal\n"
-              << "3.Hapus Data di akhir\n"
-              << "4.Hapus Seluruh data\n"
-              << "5.Tampilkan Data\n"
-              << "Masukkan Input : " ;
+    std::cout << "\n======================================"<< "\n" ;
+    std::cout << "  Rekapan Data Barang yang Tersedia\n";
+    std::cout << "======================================" << "\n";
+    std::cout << "1.Masukkan Data \n";
+    std::cout << "2.Hapus Data di awal\n";
+    std::cout << "3.Hapus Data di akhir\n";
+    std::cout << "4.Hapus Seluruh data\n";
+    std::cout << "5.Tampilkan Data\n";
+    std::cout << "Masukkan Input : " ;
     std::cin >> input_data1;
         switch (input_data1)
         {
@@ -345,7 +333,14 @@ int main() {
     char input;
     do
     {
-        main_menu();
+        std::cout << "===========================================================";
+        std::cout << "\nRekapan Data\n";
+        std::cout << "===========================================================\n";
+        std::cout << "1.Data Barang yang Tersedia\n";
+        std::cout << "2.Data Barang yang Rusak\n";
+        std::cout << "3.Kritik dan Saran\n";
+        std::cout << "4.Keluar\n";
+        std::cout << "Masukan Pilihan Menu :";
         std::cin >> input;
         switch (input) {
             case '1' :
